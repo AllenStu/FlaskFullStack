@@ -1,13 +1,17 @@
-cd TimeTracker
-cd TimeTracker
 
-source env/bin/activate
+<ol>
+    <li>cd TimeTracker</li>
+    <li>cd TimeTracker</li>
+    <li>source env/bin/activate</li>
+    <li>python __init__.py</li>
+</ol>
 
-python __init__.py
+<p> For more useful link, you may like to click the link below: </p>
 
-
-For more useful link, you may like to click the link below:
-
-<li>
-    <ul> http://allenbuckley.com/blog/setting-flask-blueprint/ </ul>
-</li>
+<p>
+    <ul>
+        <li>
+            http://allenbuckley.com/blog/setting-flask-blueprint/
+        </li>
+    </ul>
+</p>
