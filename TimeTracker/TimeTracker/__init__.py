@@ -2,6 +2,7 @@ from flask import Flask, render_template
 import admin
 import home
 
+# to specify the directory of static and template folder
 # app = Flask(__name__,
 #             template_folder='../templates',
 #             static_folder="../static")
@@ -20,8 +21,3 @@ home.add_routes(app)
 
 if __name__ == '__main__':
     app.run()
-
-    # go to http://allenbuckley.com/blog/setting-flask-blueprint/ for more useful codes
-    # cd TimeTracker
-    # cd env
-    # source env/bin/activate
