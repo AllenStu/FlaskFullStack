@@ -1,6 +1,6 @@
 
 <ol>
-    <li><b>git clone https://github.com/AllenStu/FlaskFullStack.git</b><li>
+    <li><b>git clone https://github.com/AllenStu/FlaskFullStack.git</b></li>
     <li><b>cd TimeTracker</b></li>
     <li><b>virtualenv env</b> - To install the virtual environment in the project root  </li>
     <li><b>cd TimeTracker</b></li>
