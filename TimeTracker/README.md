@@ -14,5 +14,8 @@
         <li>
             http://allenbuckley.com/blog/setting-flask-blueprint/
         </li>
+        <li>
+            https://cloud.google.com/appengine/docs/python/getting-started/python-standard-env
+        </li>
     </ul>
 </p>
