@@ -18,11 +18,13 @@ def create_app():
             nickname = user.nickname()
             logout_url = users.create_logout_url('/')
             greeting = 'Welcome, {}! (<a href="{}">sign out</a>)'.format(nickname, logout_url)
+            return render_template('index.html', message=logout_url,linkText='Sign Out')
         else:
             login_url = users.create_login_url('/')
-            greeting = '<a href="{}">Sign in</a>'
+            greeting = '<a href="{}">Sign in</a>'.format(login_url)
+            return render_template('index.html', message=login_url,linkText='Sign In')
 
-        return render_template('index.html', message=greeting)
+
 
     @app.errorhandler(500)
     def server_error(e):

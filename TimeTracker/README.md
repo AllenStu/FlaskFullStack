@@ -17,5 +17,8 @@
         <li>
             https://cloud.google.com/appengine/docs/python/getting-started/python-standard-env
         </li>
+        <li>
+            https://realpython.com/blog/python/flask-by-example-integrating-flask-and-angularjs/
+        </li>
     </ul>
 </p>
