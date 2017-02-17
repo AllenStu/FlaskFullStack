@@ -16,6 +16,10 @@ class AccountService():
 
     def getAllAccounts(self):
         list_of_accounts = AccountModel.query_all_accounts()
+        strval = ""
+        for acct in list_of_accounts:
+            strval = strval + acct.first_name
+        return strval
 
 
 
