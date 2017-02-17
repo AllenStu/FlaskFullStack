@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, jsonify
 from TimeTracker.home.model.homeModel import AccountModel
+from TimeTracker.home.model.homeService import AccountService
 
 def add_routes(app=None):
     blueprint_home = Blueprint('home', __name__,
@@ -10,19 +11,12 @@ def add_routes(app=None):
     @blueprint_home.route('/home', methods=['GET'])
     def get():
 
-        # account = HomeService.create_account()
-        account = AccountModel()
-        account.first_name = 'Juan'
-        account.last_name = 'Dela Cruz'
-        account.user_id = '1123312'
-        account.put()
 
-        account2 = {'first_name':'Maria','last_name':'Dela Cruz','user_id':'123123'}
-
-        accountType = type(account2)
-
-        account = account
-        return render_template('home.html', account2=account2, typeX=accountType, account=account)
+        # account = jsonify(dict(AccountService.create(account2)))
+        account = AccountService().create()
+        my_key = str(account.key.urlsafe())
+        # account_type = type(account)
+        return render_template('home.html', account=my_key)
         # return redirect('/')
 
     @blueprint_home.route('/home', methods=['POST'])
