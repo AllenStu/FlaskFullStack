@@ -1,6 +1,7 @@
-from flask import Blueprint, render_template, jsonify
+from flask import Blueprint, render_template, jsonify, request
 from TimeTracker.home.model.homeModel import AccountModel
 from TimeTracker.home.model.homeService import AccountService
+
 
 def add_routes(app=None):
     blueprint_home = Blueprint('home', __name__,
@@ -10,17 +11,13 @@ def add_routes(app=None):
 
     @blueprint_home.route('/home', methods=['GET'])
     def get():
-        # account = jsonify(dict(AccountService.create(account2)))
-        account = AccountService().create()
-        my_key = str(account.key.urlsafe())
-        return render_template('home.html', account=my_key)
+        return render_template('home.html')
 
 
     @blueprint_home.route('/home', methods=['POST'])
     def post():
-        account = AccountService().create()
+        account = AccountService().create(request)
         my_key = str(account.key.urlsafe())
-        return render_template('home.post.html')
-
+        return render_template('home.post.html', account=my_key)
 
     app.register_blueprint(blueprint_home)

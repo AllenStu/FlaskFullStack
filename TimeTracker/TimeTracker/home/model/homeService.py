@@ -1,20 +1,21 @@
 from TimeTracker.home.model.homeModel import AccountModel
 
+
 class AccountService():
 
-    def create(self):
+    def create(self,request):
 
         account = AccountModel()
-        # account.first_name = new_account.first_name
-        # account.last_name = new_account.last_name
-        # account.user_id = new_account.user_id
-
-        account.first_name = 'Arthur Allen'
-        account.last_name = 'Balang'
-        account.user_id = 'sj12132'
+        account.first_name = request.form['first_name']
+        account.last_name = request.form['last_name']
+        account.user_id = request.form['user_id']
 
         account.put()
 
         return account
+
+    def getAllAccounts(self):
+        list_of_accounts = AccountModel.query_all_accounts()
+
 
 
