@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from google.appengine.api import users
 import admin
 import home
@@ -24,6 +24,10 @@ def create_app():
             greeting = '<a href="{}">Sign in</a>'.format(login_url)
             return render_template('index.html', message=login_url,linkText='Sign In')
 
+
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return redirect('/')
 
 
     @app.errorhandler(500)
