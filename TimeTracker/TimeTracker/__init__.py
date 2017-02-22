@@ -18,7 +18,7 @@ def create_app():
             nickname = user.nickname()
             logout_url = users.create_logout_url('/')
             greeting = 'Welcome, {}! (<a href="{}">sign out</a>)'.format(nickname, logout_url)
-            return render_template('index.html', message=logout_url,linkText='Sign Out')
+            return render_template('index.html', message=logout_url,linkText='Sign Out',nickname=nickname)
         else:
             login_url = users.create_login_url('/')
             greeting = '<a href="{}">Sign in</a>'.format(login_url)

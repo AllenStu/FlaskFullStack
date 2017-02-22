@@ -1,14 +1,23 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css"
-          href="{{ url_for('static', filename='style.css') }}" />
-</head>
-<body>
-    <h2>Im the index.</h2>
+<html lang="en" ng-app="MyApp" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" type="text/css"
+              href="{{ url_for('static', filename='style.css') }}" />
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    </head>
+    <body ng-controller="MyController">
+        <h2>Welcome, {{ nickname }}</h2>
 
-    <a href="{{ message }}">{{ linkText }}</a>
-</body>
+        <a href="{{ message }}">{{ linkText }}</a>
+
+        <!--<form role="form" ng-submit="getResults()">-->
+            <!--<input type="submit" />-->
+        <!--</form>-->
+
+
+
+    </body>
 </html>
