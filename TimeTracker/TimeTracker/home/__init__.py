@@ -8,10 +8,19 @@ def add_routes(app=None):
                           static_folder='./static',
                           template_folder='./templates')
 
+    # @blueprint_home.route('/list', methods=['GET'])
+    # def get():
+    #     list_accounts = AccountService().getAllAccounts()
+    #     # return render_template('home.html',viewlist=list_accounts)
+    #     return jsonify(list_accounts)
+
     @blueprint_home.route('/home', methods=['GET'])
     def get():
         list_accounts = AccountService().getAllAccounts()
-        return render_template('home.html',viewlist=list_accounts)
+        # return render_template('home.html',viewlist=list_accounts)
+        return jsonify(list_accounts)
+
+
 
     @blueprint_home.route('/home', methods=['POST'])
     def post():
